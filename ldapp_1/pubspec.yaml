@@ -46,6 +46,7 @@ dev_dependencies:
   google_sign_in: ^5.2.1
   email_validator: ^2.0.1
   flutter_tts: ^3.0.0
+  flutter_svg: ^0.22.0
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -59,6 +60,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -67,9 +69,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
   #   - images/a_dot_ham.jpeg
+
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,64 +1,117 @@
 import 'package:flutter/material.dart';
-// import 'package:ldapp_1/pages/alphaeng.dart';
-// import 'package:ldapp_1/pages/alphatam.dart';
-// import 'package:ldapp_1/pages/wordseng.dart';
-// import 'package:ldapp_1/pages/wordstam.dart';
-// import 'package:ldapp_1/pages/sentenceeng.dart';
-// import 'package:ldapp_1/pages/sentencetam.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class ChooseType extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('YOUR FAVORITE'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                    
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: ElevatedButton(onPressed: (){
-                  
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => LanguageA())));
-                    }, 
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+      
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            colors: [
+              Colors.blue,
+              Colors.purple,
+              Colors.yellow,
+              Colors.teal
+            ],
+          center: Alignment.center,
+          radius: 0.5,
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: ((context) => LanguageA())),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(300, 70),
+                          primary: Colors.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        child: Text(
+                          'Alphabets',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
                     ),
-                      child: Text('Alphabets',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),)),
-                  ),
-                    
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: ElevatedButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => LanguageW())));
-                    }, 
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: ((context) => LanguageW())),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(300, 70),
+                          primary: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        child: Text(
+                          'Words',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
                     ),
-                    child: Text('Words',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),)),
-                  ),
-                    
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: ElevatedButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => LanguageS())));
-                    },
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: ((context) => LanguageS())),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(300, 70),
+                          primary: Colors.green,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        child: Text(
+                          'Sentence',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
                     ),
-                     child: Text('Sentence',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),)),
-                  ),
-                    
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -71,13 +124,10 @@ class ChooseType extends StatelessWidget {
 
 
 class LanguageA extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Language Preferred'),
-      ),
+      
       body: Center(
         child: Container(
           child: Padding(
@@ -86,27 +136,57 @@ class LanguageA extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context) => AlphabetsEng()));
-                  },
-                  style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AlphabetsEng()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 70),
+                      primary: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                  child: Text('English',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),)
+                    child: Text(
+                      'English',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                  
-                SizedBox(height: 20,width: 20,),
-                  
+                SizedBox(height: 20, width: 20),
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:((context) => AlphabetsTam())));
-                  },
-                  style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AlphabetsTam()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 70),
+                      primary: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                  child: Text('Tamil')
+                    child: Text(
+                      'Tamil',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -119,13 +199,10 @@ class LanguageA extends StatelessWidget {
 }
 
 class LanguageW extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Language Preferred'),
-      ),
+      
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -134,27 +211,57 @@ class LanguageW extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:((context) => WordsEng())));
-                  },
-                  style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WordsEng()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 70),
+                      primary: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                  child: Text('English',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),)
+                    child: Text(
+                      'English',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                  
-                SizedBox(height: 20,width: 20,),
-                  
+                SizedBox(height: 20, width: 20),
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:((context) => WordsTam())));
-                  },
-                  style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(300, 70))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WordsTam()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 70),
+                      primary: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                  child: Text('Tamil')
+                    child: Text(
+                      'Tamil',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -167,13 +274,10 @@ class LanguageW extends StatelessWidget {
 }
 
 class LanguageS extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Language Preferred'),
-      ),
+      
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -182,27 +286,57 @@ class LanguageS extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:((context) => SentencesEng())));
-                  },
-                  style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all(Size(300, 70))
-                        ),
-                  child: Text('English',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),)
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SentencesEng()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 70),
+                      primary: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: Text(
+                      'English',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-          
-                SizedBox(height: 20,width: 20,),
-          
+                SizedBox(height: 20, width: 20),
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:((context) => SentencesTam())));
-                  },
-                  style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all(Size(300, 70))
-                        ),
-                  child: Text('Tamil')
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SentencesTam()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 70),
+                      primary: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: Text(
+                      'Tamil',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -213,7 +347,6 @@ class LanguageS extends StatelessWidget {
     );
   }
 }
-
 
 
 
@@ -262,9 +395,7 @@ class _WordsEngState extends State<WordsEng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Text to Speech'),
-      ),
+
       body: Center(
         child: ListView.builder(
           itemCount: Letters.length,
@@ -312,7 +443,7 @@ class _WordsTamState extends State<WordsTam> {
     FlutterTts flutterTts = FlutterTts();
   TextEditingController textEditingControllerWT = TextEditingController();
   // String textToSpeak = 'Aa';
-  double speechRate = 2; 
+  double speechRate = 0.5; 
 
   @override
   void initState() {
@@ -345,9 +476,7 @@ class _WordsTamState extends State<WordsTam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Text to Speech'),
-      ),
+      
       body: Center(
         child: ListView.builder(
           itemCount: Letters.length,
@@ -427,9 +556,7 @@ class _SentencesEngState extends State<SentencesEng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Text to Speech'),
-      ),
+      
       body: Center(
         child: ListView.builder(
           itemCount: Letters.length,
@@ -476,7 +603,7 @@ class _SentencesTamState extends State<SentencesTam> {
   FlutterTts flutterTts = FlutterTts();
   TextEditingController textEditingControllerST = TextEditingController();
   // String textToSpeak = 'Aa';
-  double speechRate = 1.0; 
+  double speechRate = 0.5; 
 
   @override
   void initState() {
@@ -510,9 +637,7 @@ class _SentencesTamState extends State<SentencesTam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Text to Speech'),
-      ),
+      
       body: Center(
         child: ListView.builder(
           itemCount: Letters.length,
@@ -592,9 +717,7 @@ class _AlphabetsEngState extends State<AlphabetsEng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Text to Speech'),
-      ),
+      
       body: Center(
         child: ListView.builder(
           itemCount: Letters.length,
@@ -641,7 +764,7 @@ class AlphabetsTam extends StatefulWidget {
 class _AlphabetsTamState extends State<AlphabetsTam> {
     FlutterTts flutterTts = FlutterTts();
   TextEditingController textEditingControllerAT = TextEditingController();
-  double speechRatea = 0.1; 
+  double speechRatea = 0.5; 
 
   @override
   void initState() {
@@ -676,9 +799,7 @@ print(isGoodLanguage);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Text to Speech'),
-      ),
+      
       body: Center(
         child: ListView.builder(
           itemCount: Letters.length,
