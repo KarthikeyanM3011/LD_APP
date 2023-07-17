@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'whiteboardoptions.dart';
 
 class ChooseType extends StatelessWidget {
   @override

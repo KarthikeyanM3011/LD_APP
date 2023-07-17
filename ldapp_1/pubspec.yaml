@@ -47,6 +47,7 @@ dev_dependencies:
   email_validator: ^2.0.1
   flutter_tts: ^3.0.0
   flutter_svg: ^0.22.0
+  mongo_dart: ^0.9.1
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

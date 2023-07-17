@@ -3,7 +3,8 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:ldapp_1/pages/practice.dart';
 import 'package:ldapp_1/pages/whiteboard.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'whiteboardoptions.dart';
+import 'settings.dart';
 
 class Percent extends StatelessWidget {
   final int percent;
@@ -44,101 +45,274 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Learn Without Limitations'),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: ColorFiltered(
-              colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.8),
-                BlendMode.dstATop,
-              ),
-              child: Image.asset(
-                'assets/mickymouse.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      boxShadow:[
-                        BoxShadow(
-                              color: Colors.blue.withOpacity(0.5),
-                              spreadRadius: 2.0,
-                              blurRadius: 15,
-                            ),
-                      ] 
-                    ),
-                    child: Text(
-                      'Welcome Back $name!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.black,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ChooseType(),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.all(50),
-                          child: Text('Pronunciation',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 20),
-                
-                Container(
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.black,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DrawingBoard(),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.all(50),
-                          child: Text('   Writing    ',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        title: Text('Welcome ${name}'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: Image.asset(
+              'my.png', // Replace with your app logo image path
+              width: 50,
+              height: 50,
             ),
           ),
         ],
       ),
+      body: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              left: 200,
+              child: Image.asset(
+                'mickymouse.png', // Replace with the image path of your app's logo
+                width: 100,
+                height: 100,
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top:80),
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Text(
+                            "DashBoard Options",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 28.0,
+                            ),
+                            textAlign: TextAlign.start,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Center(
+                          child: Wrap(
+                            spacing: 20.0,
+                            runSpacing: 20.0,
+                            children: [
+                              SizedBox(
+                                width: 160.0,
+                                height: 170.0,
+                                child: Card(
+                                  color: Color.fromARGB(255, 21, 21, 21),
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "goal.png",
+                                            width: 64.0,
+                                            height: 90.0,
+                                          ),
+                                          SizedBox(height: 0.0),
+                                          ElevatedButton(
+                                            onPressed: (){},
+                                            child: Text(
+                                              "Daily Task",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 5.0),
+                                          Text(
+                                            "",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 160.0,
+                                height: 170.0,
+                                child: Card(
+                                  color: Color.fromARGB(255, 21, 21, 21),
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "speaking.png",
+                                            width: 64.0,
+                                            height: 90.0,
+                                          ),
+                                          SizedBox(height: 0.0),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => ChooseType(),
+                                                ),
+                                              );
+                                            },
+                                            child: Text(
+                                              "Pronunciation",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 5.0),
+                                          Text(
+                                            "",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 160.0,
+                                height: 170.0,
+                                child: Card(
+                                  color: Color.fromARGB(255, 21, 21, 21),
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "writing.png",
+                                            width: 64.0,
+                                            height: 90.0,
+                                          ),
+                                          SizedBox(height: 0.0),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => Writechoose(),
+                                                ),
+                                              );
+                                            },
+                                            child: Text(
+                                              "Writing",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 5.0),
+                                          Text(
+                                            "",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 160.0,
+                                height: 170.0,
+                                child: Card(
+                                  color: Color.fromARGB(255, 21, 21, 21),
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "person.png",
+                                            width: 64.0,
+                                            height: 90.0,
+                                          ),
+                                          SizedBox(height: 0.0),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => Settings(),
+                                                ),
+                                              );
+                                            },
+                                            child: Text(
+                                              "About Me",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 5.0),
+                                          Text(
+                                            "",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
