@@ -1,6 +1,6 @@
 # ldapp_1
 
-A new Flutter project.
+A new Flutter project.Special app for Childers with Learning Disability.Ongoing Process...
 
 ## Getting Started
 
